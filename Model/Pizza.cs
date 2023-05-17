@@ -22,7 +22,7 @@ namespace BlazingPizza
 
         public int Size { get; set; }
 
-        public List<PizzaTopping> Toppings { get; set; }
+        //public List<PizzaTopping> Toppings { get; set; }
 
         public decimal GetBasePrice()
         {
