@@ -1,0 +1,41 @@
+﻿@page "/input"
+<div>
+    <div>
+        <p>
+            Your email address is:
+            <input @bind="customerEmail" />
+            <button @onclick="Alterar">Teste</button>
+
+        </p>
+    </div>
+    <br />
+    <div>
+        <h1>My favorite pizza is: @favPizza</h1>
+
+
+        <p>
+            Enter your favorite pizza:
+            <input @bind-value="favPizza" @bind-value:event="oninput" />
+        </p>
+    </div>
+    <div>
+        <h1>Formatacao de Input</h1>
+        <p>
+            Enter your birth date:
+            <input @bind="birthdate" @bind:format="dd-MM-yyyy" />
+        </p>
+    </div>
+</div>
+
+
+@code {
+    private string customerEmail = "john.doe@contoso.com";
+    private string favPizza { get; set; } = "Margherita";
+    private DateTime birthdate { get; set; } = new(2000, 1, 1);
+
+    void Alterar()
+    {
+        customerEmail = "aaa";
+
+    }
+}
